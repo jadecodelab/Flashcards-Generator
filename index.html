@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header id="appHeader" class="app-header">
+      <div>
+        <p class="app-kicker">Study App</p>
+        <h1>Build flashcards from any class notes.</h1>
+      </div>
+    </header>
+
+    <section class="mode-panel">
+      <section id="createView" class="mode-view active">
+        <div id="createPanel" class="panel-card section-block create-panel">
+          <div class="section-head split-head">
+            <div>
+              <h2>Create Deck</h2>
+              <p>Paste notes or upload a file, then choose how many cards and how difficult they should be.</p>
+            </div>
+            <button id="tabSaved" class="section-link" type="button" data-tab="saved" aria-pressed="false">Saved Decks</button>
+          </div>
+
+          <label for="notes">Notes</label>
+          <textarea id="notes" rows="10" placeholder="Paste class notes here..."></textarea>
+
+          <label for="fileUpload">Upload file</label>
+          <input type="file" id="fileUpload" accept=".txt,.md,.csv,.docx,text/plain,text/markdown,text/csv,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+
+          <label for="topic">Topic</label>
+          <input type="text" id="topic" placeholder="Example: Central Limit Theorem" />
+
+          <div class="form-grid settings-row">
+            <div>
+              <label for="cardCount">Number of flashcards</label>
+              <select id="cardCount">
+                <option value="4">4</option>
+                <option value="6" selected>6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div>
+              <label for="difficulty">Difficulty</label>
+              <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="primary-actions">
+            <button id="generateBtn" type="button">Generate Flashcards</button>
+          </div>
+          <p id="statusMessage" class="status hidden"></p>
+        </div>
+
+        <section id="reviewView" class="review-view hidden">
+          <div class="review-layout">
+            <div class="panel-card review-stage">
+              <div class="review-shell">
+                <div class="review-header compact-review-header">
+                  <div>
+                    <p class="review-label">Current Deck</p>
+                    <h2 id="reviewDeckTitle">No deck loaded yet</h2>
+                    <p id="reviewDeckMeta" class="review-meta">Generate a deck or open a saved one to start reviewing.</p>
+                  </div>
+                  <div class="output-actions compact-actions">
+                    <button id="backToCreateBtn" type="button" class="ghost-btn">Create New Deck</button>
+                    <button id="saveDeckBtn" type="button" class="secondary-btn hidden">Save Deck</button>
+                  </div>
+                </div>
+
+                <div id="reviewEmptyState" class="empty-state review-empty-state">
+                  Generate a deck or open a saved one to start reviewing.
+                </div>
+
+                <div id="reviewCardArea" class="review-card-area hidden">
+                  <div class="review-toolbar">
+                    <p class="review-hint">Click the card to reveal the answer.</p>
+                    <button id="shuffleDeckBtn" type="button" class="text-btn hidden">Shuffle deck</button>
+                  </div>
+
+                  <p id="reviewProgress" class="review-progress-line">Card 1 of 6</p>
+
+                  <article id="reviewCard" class="review-card">
+                    <p class="review-card-label">Question</p>
+                    <h3 id="reviewQuestion">Question goes here</h3>
+                    <p id="reviewAnswer" class="review-answer hidden">Answer goes here</p>
+                  </article>
+
+                  <div class="review-nav">
+                    <button id="prevCardBtn" type="button" class="secondary-btn">Previous</button>
+                    <button id="nextCardBtn" type="button" class="secondary-btn">Next</button>
+                  </div>
+
+                  <div class="panel-card question-list-panel">
+                    <div class="section-head compact">
+                      <h2>Questions</h2>
+                      <p>Jump to any question in the current deck.</p>
+                    </div>
+                    <div id="questionList" class="question-list"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="savedView" class="mode-view" data-view="saved">
+        <div class="panel-card section-block saved-panel">
+          <div class="section-head split-head">
+            <div>
+              <h2>Saved Decks</h2>
+              <p>Open a saved deck to review it again later, or delete it if you no longer need it.</p>
+            </div>
+            <button id="backToCreateLink" class="section-link" type="button">Back to Create</button>
+          </div>
+          <div id="savedDecksList" class="saved-decks-list"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
