@@ -14,7 +14,7 @@ An AI-powered study app that lets you paste or upload notes, add a topic, and ge
 ![Review Mode](./screenshots/review-mode.png)
 
 ### Saved Decks
-![Saved Decks](./screenshots/saved-decks.png)
+![Saved Decks](./screenshots/saved-deck.png)
 
 ## Features
 
