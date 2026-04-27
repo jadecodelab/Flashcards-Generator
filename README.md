@@ -5,6 +5,17 @@ An AI-powered study app that lets you paste or upload notes, add a topic, and ge
 ## Live App
 [Open the app](https://flashcards-generator-g358.onrender.com/)
 
+## Screenshots
+
+### Create Deck
+![Create Deck](./screenshots/create-deck.png)
+
+### Review Mode
+![Review Mode](./screenshots/review-mode.png)
+
+### Saved Decks
+![Saved Decks](./screenshots/saved-decks.png)
+
 ## Features
 
 - Paste notes directly into the app
