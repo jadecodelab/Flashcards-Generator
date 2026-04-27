@@ -1,32 +1,43 @@
-# Flashcards App
+# Flashcards Generator
 
 An AI-powered study app that lets you paste or upload notes, add a topic, and generate flashcards for review.
 
+## Live App
+[Open the app](https://flashcards-generator-g358.onrender.com/)
+
 ## Features
 
-- Paste notes directly into the page
+- Paste notes directly into the app
 - Upload `.txt`, `.md`, `.csv`, or `.docx` notes
-- Generate flashcards with OpenAI
-- Click cards to reveal and hide answers
+- Generate flashcards with AI
+- Review one flashcard at a time
+- Shuffle the current deck
+- Save decks locally in the browser
+- Reopen or delete saved decks later
 
+
+## Tech Stack
+
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express
+- OpenAI API
+  
 ## Setup
 
 1. Install dependencies:
 
-   ```powershell
-   npm.cmd install
-   ```
+    ```bash
+   npm install
 
-2. Create a `.env` file from `.env.example` and add your OpenAI API key:
-
-   ```powershell
-   copy .env.example .env
-   ```
+2. Create a `.env` and add your OpenAI API key
 
 3. Start the app:
 
-   ```powershell
-   npm.cmd run dev
+   ```bash
+   npm start
    ```
 
 4. Open `http://localhost:3000`
